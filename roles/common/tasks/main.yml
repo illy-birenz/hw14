@@ -1,0 +1,11 @@
+---
+- name: install vim and zip
+  become: true
+  become_method: sudo
+  apt: name={{ item }} state=present
+  with_items:
+          - zip
+          - vim
+
+- name: copy h_world
+  copy: src=h_world.txt dest=/tmp/test1
