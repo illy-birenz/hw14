@@ -1,0 +1,1 @@
+This container hostname is : {{ inventory_hostname }}

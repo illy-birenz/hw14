@@ -1,0 +1,10 @@
+---
+# This playbook installs and copies ll requested operation for HW#14
+
+- name: apply requested installs and files to all nodes
+  hosts: all
+  remote_user: root
+
+  roles:
+    - common
+
