@@ -7,5 +7,26 @@
           - zip
           - vim
 
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /root/tmp/test1
+    state: directory
+    mode: '0755'
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /root/tmp/test2
+    state: directory
+    mode: '0755'
+
+- name: create file for srver name
+  ansible.builtin.file:
+    path: /root/tmp/test2/serv_name.j2
+    state: touch
+
 - name: copy h_world
-  copy: src=h_world.txt dest=/tmp/test1
+  copy: src=h_world.txt dest=/root/tmp/test1
+
+- name: Resolve and write sevrer name
+  template: src=serv_name.conf dest=/root/tmp/test2/serv_name.j2
+  tags: server_name
