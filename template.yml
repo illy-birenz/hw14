@@ -1,9 +1,0 @@
----
-- hosts: servers
-  serial: 1
-  tasks:
-
-  - name: Write server name in file locted /tmp/test2
-    template:
-        src: serv_name.j2
-        dest: /root/serv_name.j2
